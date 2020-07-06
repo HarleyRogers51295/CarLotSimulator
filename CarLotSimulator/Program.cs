@@ -8,23 +8,23 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
-
-            //DONE: Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-
-            //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
-            CarLot carLot = new CarLot(); 
             
-            
+            CarLot carLot = new CarLot();
 
+
+            Console.WriteLine($"Number of cars {CarLot._numberOfCars}"); //this is implemented every time we call the car class. 
 
             Car redCar = new Car(1995, "Jeep", "Grand Cherokee", "vroom vroom", "Beep Beep!", true);
             CarLot.CarList.Add(redCar);//adding car to the list
+            Console.WriteLine($"Number of cars {CarLot._numberOfCars}"); //this is implemented every time we call the car class. 
             Car blueCar = new Car(2005, "Ford", "F150", "VRUMMMMMMMM!", "Doot Doot!", false);
+            CarLot.CarList.Add(blueCar);
+            Console.WriteLine($"Number of cars {CarLot._numberOfCars}"); //this is implemented every time we call the car class. 
             Car blackCar = new Car(2020, "Tesle", "Mark3", "*krickits*", "squeek squeek!", false);
+            CarLot.CarList.Add(blackCar);
+
+            Console.WriteLine($"The number of cars made it {CarLot.CarList.Count}");
+            Console.WriteLine($"Number of cars {CarLot._numberOfCars}"); //this is implemented every time we call the car class. 
 
             Console.WriteLine("Here is the red cars stats!");
             Console.WriteLine($"{redCar.Year}, {redCar.Make}, {redCar.Model}, {redCar.IsDriveable}");

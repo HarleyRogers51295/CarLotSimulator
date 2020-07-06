@@ -6,8 +6,7 @@ namespace CarLotSimulator
 {
     class Car
     {
-         //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-
+        
         public int Year { get; set; }
         public string Make { get; set; }
         public string Model{ get; set; }
@@ -15,7 +14,10 @@ namespace CarLotSimulator
         public string HonkNoise { get; set; }
         public bool IsDriveable { get; set; }
 
-        public Car() { /*defualt constructor.*/ }
+        public Car() 
+        {
+            CarLot._numberOfCars++; //This increments the static field in CarLot
+        }
         public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDrivable)
         {
             this.Year = year;
@@ -24,13 +26,11 @@ namespace CarLotSimulator
             this.EngineNoise = engineNoise;
             this.HonkNoise = honkNoise;
             this.IsDriveable = isDrivable;
-            
+            CarLot._numberOfCars++;// Need to do it in both!
 
         }
 
-        //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-        //The methods should take one string parameter: the respective noise property
-
+        
         public static void MakeEngineNoise(string engineNoises)
         {
            Console.WriteLine(engineNoises);
